@@ -1,4 +1,4 @@
-package ru.therasync.clients
+package project.therasync
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
