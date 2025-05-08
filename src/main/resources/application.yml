@@ -2,7 +2,7 @@ spring:
   application:
     name: therasync-clients
   datasource:
-    url: jdbc:postgresql://localhost:5432/therasync_main
+    url: jdbc:postgresql://localhost:5432/therasync_clients
     username: postgres
     password: password
     driver-class-name: org.postgresql.Driver
