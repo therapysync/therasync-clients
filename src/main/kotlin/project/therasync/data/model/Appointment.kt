@@ -1,16 +1,22 @@
 package project.therasync.data.model
 
+import jakarta.persistence.*
 import java.time.LocalDate
 import java.time.LocalTime
-import jakarta.persistence.*
 
 @Entity
 data class Appointment(
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long = 0,
-    val date: LocalDate,
-    val startTime: LocalTime,
-    val endTime: LocalTime,
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    var id: Long = 0,
+
+    var date: LocalDate,
+    var startTime: LocalTime,
+    var endTime: LocalTime,
+
+    var psychologistId: String,
+    var clientId: String,
+
     @Enumerated(EnumType.STRING)
-    val status: Status
+    var status: Status
 )
