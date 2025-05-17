@@ -1,14 +1,17 @@
 package project.therasync.data.dto
 
+import project.therasync.data.model.TaskStatus
+import java.time.LocalDate
+
 data class TaskRequest(
     val title: String,
     val taskText: String,
-    val psychologistId: String,
-    val clientId: String
+    val clientId: Long,
+    val visibleFrom: LocalDate,
 )
 
 data class TaskAnswerRequest(
-    val answerText: String
+    val answerText: String,
 )
 
 data class TaskResponse(
@@ -16,6 +19,7 @@ data class TaskResponse(
     val title: String,
     val taskText: String,
     val answerText: String?,
-    val clientId: String,
-    val psychologistId: String
+    val clientId: Long,
+    val psychologistId: Long,
+    val taskStatus: TaskStatus,
 )

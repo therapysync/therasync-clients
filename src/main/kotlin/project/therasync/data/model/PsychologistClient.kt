@@ -6,6 +6,6 @@ import jakarta.persistence.*
 data class PsychologistClient(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long = 0,
-    val psychologistId: String,
-    val clientId: String
+    val psychologistId: Long,
+    val clientId: Long
 )
