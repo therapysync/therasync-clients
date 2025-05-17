@@ -2,7 +2,6 @@ package project.therasync.common.config
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.type.TypeFactory
-import project.therasync.common.model.RequestContainer
 import jakarta.servlet.http.HttpServletRequest
 import org.springframework.core.MethodParameter
 import org.springframework.stereotype.Component
@@ -10,6 +9,7 @@ import org.springframework.web.bind.support.WebDataBinderFactory
 import org.springframework.web.context.request.NativeWebRequest
 import org.springframework.web.method.support.HandlerMethodArgumentResolver
 import org.springframework.web.method.support.ModelAndViewContainer
+import project.therasync.common.model.RequestContainer
 import java.lang.reflect.ParameterizedType
 
 @Component
@@ -41,7 +41,7 @@ class RequestContainerArgumentResolver(
                 throw IllegalArgumentException("💥 Failed to parse request body as $tType", e)
             }
 
-        val clientId = httpServletRequest.getHeader("X-Client-Id")
+        val clientId = httpServletRequest.getHeader("X-Client-Id").toLong()
         val role = httpServletRequest.getHeader("X-Role")
 
         return RequestContainer(

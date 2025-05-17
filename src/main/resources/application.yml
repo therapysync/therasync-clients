@@ -14,6 +14,12 @@ spring:
       ddl-auto: update
     show-sql: true
 
+  cloud:
+    openfeign:
+      client:
+        config:
+          therasync-auth:
+            url: http://localhost:8080
 springdoc:
   api-docs:
     enabled: true
@@ -21,4 +27,4 @@ springdoc:
     path: /swagger-ui.html
 
 server:
-  port: 8080
+  port: 8090
